@@ -21,21 +21,14 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String action = request.getServletPath();
 		System.out.println(action);
-		if (action.equals("/Controller")) {
-			contatos(request, response);
-		}
+		//if (action.equals("/Controller")) {
+		contatos(request, response);
+		//}
 	}
 
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.sendRedirect("Agenda.jsp");
-	}
-	
-	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("fone"));
-		System.out.println(request.getParameter("email"));
 	}
 
 }

@@ -35,14 +35,14 @@ public class NovoController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//Teste de dados
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("fone"));
-		System.out.println(request.getParameter("email"));
 		//setar as variaveis JavaBeans
 		contato.setNome(request.getParameter("nome"));
 		contato.setTelefone(request.getParameter("fone"));
 		contato.setEmail(request.getParameter("email"));
+		//invocar o método inserir contato
+		dao.inserirContato(contato);
+		
+		response.sendRedirect("Controller");
 	}
 
 }
