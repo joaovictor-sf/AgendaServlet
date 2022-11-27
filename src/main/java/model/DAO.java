@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 public class DAO {
 	private String url = "jdbc:postgresql://localhost:5432/postgres";
 	private String usuario = "postgres";
-	private String senha = "joao10dqda";
+	private String senha = "postgres";
 	private String driver = "org.postgresql.Driver";
 	
 	private Connection conectar() {
