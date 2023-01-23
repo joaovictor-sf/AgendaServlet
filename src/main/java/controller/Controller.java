@@ -1,13 +1,16 @@
 package controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.DAO;
+import model.JavaBeans;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,7 +31,12 @@ public class Controller extends HttpServlet {
 
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("Agenda.jsp");
+		//response.sendRedirect("Agenda.jsp");
+		ArrayList<JavaBeans> lista = dao.listarContatos();
+		
+		request.setAttribute("contatos", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("Agenda.jsp");
+		rd.forward(request, response);
 	}
 
 }

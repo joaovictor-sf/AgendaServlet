@@ -10,25 +10,15 @@ import model.JavaBeans;
 
 import java.io.IOException;
 
-/**
- * Servlet implementation class NovoController
- */
 public class NovoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
 	JavaBeans contato = new JavaBeans();
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public NovoController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
